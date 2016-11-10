@@ -1,0 +1,50 @@
+NAME="libidn2"
+VERSION=0.11
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="International Domain Name library"
+DESCRIPTION="An implementation of the Stringprep, Punycode and IDNA specifications defined
+by the IETF Internationalized Domain Names (IDN) working group."
+HOMEPAGE="http://www.gnu.org/software/libidn/"
+SRC_URI="ftp://alpha.gnu.org/gnu/libidn/libidn2-${VERSION}.tar.gz \
+         ftp://alpha.gnu.org/gnu/libidn/libidn2-${VERSION}.tar.gz.sig"
+
+PKG_NAMES="${NAME} ${NAME}_0 ${NAME}-devel ${NAME}-doc"
+libidn2_CATEGORY="Net"
+libidn2_SUMMARY="${SUMMARY} (utilities)"
+libidn2_CONTENTS="
+	--exclude=examples --exclude=*.html --exclude=*.pdf
+	usr/bin/idn2.exe
+	usr/share/doc/
+	usr/share/info/
+	usr/share/man/man1/idn2.*
+"
+libidn2_0_SUMMARY="${SUMMARY} (runtime)"
+libidn2_0_CONTENTS="
+	usr/bin/cygidn2-0.dll
+"
+libidn2_devel_SUMMARY="${SUMMARY} (development)"
+libidn2_devel_CONTENTS="
+	usr/include/idn2.h
+	usr/lib/libidn2.dll.a
+"
+libidn2_doc_CATEGORY="Doc"
+libidn2_doc_SUMMARY="${SUMMARY} (documentation)"
+libidn2_doc_CONTENTS="
+	usr/share/doc/${NAME}/examples/
+	usr/share/doc/${NAME}/*.html
+	usr/share/doc/${NAME}/*.pdf
+	usr/share/gtk-doc/html/libidn2/
+	usr/share/man/man3/
+"
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	rm -f ${D}/usr/bin/{lookup,register}.exe
+	docinto examples
+	dodoc ${S}/examples/*.c
+}
+
+DOCS="doc/libidn2.pdf doc/libidn2.html"
