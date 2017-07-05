@@ -1,13 +1,13 @@
 NAME="libidn2"
-VERSION=2.0.1
+VERSION=2.0.2
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="International Domain Name library"
 DESCRIPTION="An implementation of the Stringprep, Punycode and IDNA specifications defined
 by the IETF Internationalized Domain Names (IDN) working group."
 HOMEPAGE="http://www.gnu.org/software/libidn/"
-SRC_URI="mirror://gnu/libidn/libidn2-${VERSION}.tar.xz \
-         mirror://gnu/libidn/libidn2-${VERSION}.tar.xz.sig"
+SRC_URI="mirror://gnu/libidn/libidn2-${VERSION}.tar.lz \
+         mirror://gnu/libidn/libidn2-${VERSION}.tar.lz.sig"
 
 PKG_NAMES="${NAME} ${NAME}_0 ${NAME}-devel ${NAME}-doc"
 libidn2_CATEGORY="Net"
