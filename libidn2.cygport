@@ -1,5 +1,5 @@
 NAME="libidn2"
-VERSION=2.0.2
+VERSION=2.0.4
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="International Domain Name library"
@@ -38,6 +38,8 @@ libidn2_doc_CONTENTS="
 	usr/share/gtk-doc/html/libidn2/
 	usr/share/man/man3/
 "
+
+CYGCONF_ARGS="--enable-gtk-doc"
 
 src_install() {
 	cd ${B}
