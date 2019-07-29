@@ -1,5 +1,5 @@
 NAME="libidn2"
-VERSION=2.0.4
+VERSION=2.2.0
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="International Domain Name library"
@@ -22,6 +22,7 @@ libidn2_CONTENTS="
 libidn2_0_SUMMARY="${SUMMARY} (runtime)"
 libidn2_0_CONTENTS="
 	usr/bin/cygidn2-0.dll
+	usr/share/locale/*/*/libidn2.mo
 "
 libidn2_devel_SUMMARY="${SUMMARY} (development)"
 libidn2_devel_CONTENTS="
